@@ -1,7 +1,8 @@
 _ghq_look() {
   ghq list | fzf +m -q "$1" \
     --preview-window up \
-    --preview "bat --color=always '$root/$(printf "%s" {})/README.md'"
+    --preview "glow -p -s dark '$root/$(printf "%s" {})/README.md' 2> /dev/null ||
+               echo 'No README file found'"
 }
 
 function ghq_cd() {
