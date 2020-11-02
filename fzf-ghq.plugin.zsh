@@ -1,7 +1,7 @@
 _ghq_look() {
   ghq list | fzf +m -q "$1" \
     --preview-window up \
-    --preview "glow -p -s dark '\$(ghq root)/{}/README.md' 2> /dev/null ||
+    --preview "glow -p -s dark \$(ghq root)/{}/README.md 2> /dev/null ||
                echo 'No README file found'"
 }
 
